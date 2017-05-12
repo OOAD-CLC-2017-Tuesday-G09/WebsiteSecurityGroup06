@@ -68,7 +68,7 @@ public class UserDAOImpl implements UserDAO {
 		PreparedStatement ps;
 		try {
 			ps = (PreparedStatement) con.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
+			ResultSet rs = ps.executeQuery(sql);
 			if (rs.next()) {
 				con.close();
 				return true;

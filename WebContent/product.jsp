@@ -36,6 +36,7 @@
 					
 								<%	for (Product p : productDAO.getList()) {
 						%>
+						
 						<pg:item>
 							<li class="preorder"><span class="tagimg "></span> <a
 								href="detail.jsp?ma_san_pham=<%=p.getMa_san_pham()%>"> <img

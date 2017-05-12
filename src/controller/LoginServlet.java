@@ -47,7 +47,6 @@ public class LoginServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-
 		String err = "";
 		if (username.equals("") || password.equals("")) {
 			err += "Phải nhập thông tin!";

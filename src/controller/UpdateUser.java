@@ -64,7 +64,7 @@ java.sql.Date ngaysinh= null;
 		String url = "/update_user.jsp";
 
 		if (password.equals("") || email.equals("") || sdt.equals("") || diachi.equals("")) {
-			err += "Phải nhập đầy đủ thông tin!";
+			err += "Phải nhập thông tin vào!";
 		} else {
 			 
 				Pattern pattenObj = Pattern
@@ -72,13 +72,13 @@ java.sql.Date ngaysinh= null;
 								+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 				Matcher matcherObj = pattenObj.matcher(email);
 				if (!matcherObj.matches()) {
-					err += "Email sai định dạng!";
+					err += "Email sai!";
 				}else{
 					Pattern pattenObj2 = Pattern
 							.compile("(09)\\d{8}|(01)\\d{9}");
 					Matcher matcherObj2 = pattenObj2.matcher(sdt);
 					if (!matcherObj2.matches()) {
-						err += "Sđt sai định dạng!";}
+						err += "Sai định dạng!";}
 				}
 		}
 

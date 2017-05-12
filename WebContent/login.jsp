@@ -1,85 +1,60 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+	<%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
- <link rel="stylesheet" type="text/css" href="ThuVien/css/login.css"/>
- <head>
- <!-- 		<script type="text/javascript">
- 		function specialcharecter()
- 		{
- 		    var iChars = "!`@#$%^&*()+=-[]\\\';,./{}|\":<>?~_";   
- 		    var data = document.getElementById("uname").value;
- 		    for (var i = 0; i < data.length; i++)
- 		    {      
- 		        if (iChars.indexOf(data.charAt(i)) != -1)
- 		        {    
- 		            alert ("Your string has special characters. \nThese are not allowed.");
- 		            document.getElementById("uname").value = "";
- 		            return false; 
- 		        } 
- 		    }
- 		}
-		</script> -->
-		<script>
-$(document).ready(function()
-{
-
-});
-</script>
- </head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="ThuVien/css/login.css" rel='stylesheet' type='text/css' />
+<title>Đăng nhập hệ thống</title>
+</head>
 <body>
-	<%@include file="header.jsp"%>
-
-<body>
-	<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-			url="jdbc:mysql://localhost:3306/websitesecurity?useUnicode=true&characterEcoding=utf-8"
-			user="root" password="0123" />
-		<sql:query dataSource="${snapshot}" var="result">
-			SELECT * FROM customer
-	</sql:query>
-	<div class="table-responsive">
-			<table class="table table-striped">
-				<thead>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Phone</th>
-					<th>Zip</th>
-				</thead>
-				<tbody>
-					<c:forEach var="row" items="${result.rows}">
-						<tr>
-							<td><c:out value="${row.customerId}" /></td>
-							<td><c:out value="${row.customerName}" /></td>
-							<td><c:out value="${row.customerEmail}" /></td>
-							<td><c:out value="${row.customerPhone}" /></td>
-							<td><c:out value="${row.customerZip}" /></td>
-						</tr>
-					</c:forEach>
-					
- <div class="login-card">
+	<%
+		String err = "";
+		if (request.getAttribute("err") != null) {
+			err = (String) request.getAttribute("err");
+		}
+	%>
+	<!--/start-login-one-->
+			<%@include file="header.jsp"%>
+			<div class="container">
+	<div class="login-01">
+		<div class="one-login  hvr-float-shadow">
+			 <div class="login-card">
     <h1 style="color:blue">Đăng Nhập</h1><br>
-  <form action="loginAuthenticate.jsp" name ="myform" method="POST" id="signupForm1" class="form-horizontal" onsubmit="return specialcharecter()">
-    <input type="text" name="uname"  id="uname" placeholder="User Name"  required>
-    <input type="password" name="pass" id="pass"  placeholder="PassWord" required>
+  <form action="LoginServlet" name ="myform" method="POST">
+  <% String mess="";
+				if (request.getAttribute("mess") != null){
+					mess= (String) request.getAttribute("mess");%>
+				<li style="color: red"><%=mess%></li>	
+					<% }%>
+				<li style="color: red"><%=err%></li>
+    <input type="text" name="username"  id="username" placeholder="User Name"  required>
+    <input type="password" name="password" id="password"  placeholder="PassWord" required>
+    <div class="p-container">
+					<label class="checkbox"><input type="checkbox"
+						name="checkbox" checked><i></i>Ghi nhớ mật khẩu</label>
+					<h6>
+						<a href="resetpassword.jsp">Khôi phục mật khẩu</a>
+					</h6>
+					<div class="clear"></div>
+				</div>
       <input type="submit" class="login login-submit" onclick='return submit()' value="login"/>
   </form>
-     <font color="red" id="msgbox"><c:if test="${not empty param.errMsg}">
-            <c:out value="${param.errMsg}" />
-            </c:if></font>
   <div class="login-help">
      <a href="#">Quên mật khẩu</a></br>
   </div>
 
-</div>   
-	<%@include file="footer.jsp"%>
 </div>
-                   
-
+				<h5>
+					Bạn muốn đăng ký tài khoản?<a href="register.jsp"> Đăng ký </a>
+				</h5>
+			</form>
+		</div>
+	</div>
 </div>
 </body>
 </html>

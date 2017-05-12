@@ -25,15 +25,20 @@
                        user="root" password="0123"/>
  
       <sql:query dataSource="${ds}" var="selectQ">
-        SELECT count(*) as kount FROM customer WHERE customerName='${param.uname}'AND customerPassword='${param.pass}'
+        SELECT count(*) as kount FROM user WHERE username='${param.uname}'AND password='${param.pass}' AND role='1'
       </sql:query>
   <c:forEach items="${selectQ.rows}" var="r">
         <c:choose>
           <c:when test="${r.kount gt 0}">
             <c:set scope="session"
                    var="loginUser"
-                   value="${param.uname}"/>
-            <c:redirect url="success.jsp">
+                   value="${param.uname}"
+                  />
+                     <c:set scope="session"
+                   var="role"
+                   value="1"
+                  />
+            <c:redirect url="index.jsp">
              <c:param name="errMsg" value="Đăng nhập thành công" />
             </c:redirect>
           </c:when>

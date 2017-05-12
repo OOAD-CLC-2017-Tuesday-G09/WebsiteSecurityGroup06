@@ -75,17 +75,17 @@ public class RegisterServlet extends HttpServlet {
 		String url = "/register.jsp";
 
 		if (username.equals("") || password.equals("") || email.equals("") || diachi.equals("") || sdt.equals("")) {
-			err += "Phải nhập đầy đủ thông tin!";
+			err += "phải nhập thông tin đầy đủ!";
 		} else {
 			if (userDAO.checkUser(username) == true) {
-				err += "Tài khoản đã tồn tại!";
+				err += "Tài khoản đã tồn tại";
 			} else {
 				Pattern pattenObj = Pattern
 						.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 								+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 				Matcher matcherObj = pattenObj.matcher(email);
 				if (!matcherObj.matches()) {
-					err += "Email sai định dạng!";
+					err += "Email sai !";
 				}
 			}
 		}

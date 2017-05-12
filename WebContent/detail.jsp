@@ -70,57 +70,7 @@
 		nf.setMinimumFractionDigits(0);
 	%>
 	<div id="main">
-		<%-- 
-		<%
 		
-			String username = null;
-				Cookie[] cookies = request.getCookies();
-				if(cookies !=null)
-				{
-				for(Cookie cookie : cookies)
-				{
-				    if(cookie.getName().equals("username")) 
-				    	username = cookie.getValue();
-				}
-				}
-				
-				
-			if (username != null) {
-		%>
-		<div id="head-link">
-			<div id='menungang'>
-				<ul>
-					<li class='last'><a href="index.jsp"><span>Trang
-								chủ</span></a></li>
-					<li class='last'><a href="#"><span>Sản phẩm</span></a></li>
-					<li class='last'><a href="cart.jsp"><span>Giỏ hàng</span></a></li>
-					<li class='last'><a href="search_page.jsp"><span>Tìm kiếm</span></a></li>
-					<li class='last' style="float: right;"><a href="LogoutServlet"><span>Đăng xuất</span></a></li>
-					<li class='last' style="float: right;"><a href="update_user.jsp?username=<%=username %>"><span><%=username %></span></a></li>
-					
-				</ul>
-			</div>
-		</div>
-		<%
-			} else {
-		%>
-		<div id="head-link">
-			<div id='menungang'>
-				<ul>
-					<li class='last'><a href="index.jsp"><span>Trang
-								chủ</span></a></li>
-					<li class='last'><a href="#"><span>Sản phẩm</span></a></li>
-					<li class='last'><a href="search_page.jsp"><span>Tìm kiếm</span></a></li>
-					<li class='last' style="float: right;"><a href="register.jsp"><span>Đăng
-								ký</span></a></li>
-					<li class='last' style="float: right;"><a href="login.jsp"><span>Đăng
-								nhập</span></a></li>
-				</ul>
-			</div>
-		</div>
-		<%
-			}
-		%> --%>
 		<div id="content">
 
 			<div class="left-1">
@@ -149,28 +99,33 @@
 					</tr>
 
 				</table>
-			</div>
-			<%-- <% if(username != null) { %> --%>
+			
+			<% if(username != null) { %>
 			<div
-				style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 10px; padding: 10px; clear: both;">
+				style="margin-left: auto; margin-right: auto; text-align: right; margin-top: 10px; padding: 10px; clear: both;">
 				<a
 					href="#"><img
-					src="images/giohang.png" /></a>
+					src="ThuVien/images/giohang.png" /></a>
 				<form action="GioHangServlet" method="post">
-					<input type="number" min="1" value="1" name="soluong"/>
+				<div class="col-xs-12 col-md-7">
+					<input type="number"  class="form-control"  min="1" value="1" name="soluong"/>
+					</div>
 					<input type="hidden" value="setCart" name="command"/>
 					<input type="hidden" value="<%=ma_san_pham %>" name="ma_san_pham"/>
-					<input type="submit" value="Thêm vào giỏ hàng">
+						<div class="col-xs-12 col-md-5">
+					<input type="submit" class="btn btn-primary"  value="Thêm vào giỏ hàng">
+					</div>
 				</form>	
 			</div>
-			<%-- <%} else { %>
+			<%} else { %>
 			<div
 				style="margin-left: auto; margin-right: auto; text-align: center; margin-top: 10px; padding: 10px; clear: both;">
 				<a
 					href="login.jsp"><img
-					src="images/giohang.png" /></a>
+					src="ThuVien/images/giohang.png" /></a>
 			</div>
-			<%} %> --%>
+			<%} %>
+			</div>
 			<div class="left-3">
 				<article> <input type="checkbox" id="read_more"
 					role="button"> <label for="read_more" onclick=""

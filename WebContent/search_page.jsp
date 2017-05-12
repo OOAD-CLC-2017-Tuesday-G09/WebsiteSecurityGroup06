@@ -1,4 +1,4 @@
-<%@page import="java.util.ArrayList"%>
+LogoutServlet<%@page import="java.util.ArrayList"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.ProductDAOImpl"%>
@@ -15,62 +15,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Trang chủ</title>
-<!-- <link rel="stylesheet" href="ThuVien/css/style.css" />
-<link rel="stylesheet" href="ThuVien/css/menu.css" />
-<link rel="stylesheet" href="ThuVien/css/product.css" /> -->
+<link rel="stylesheet" href="ThuVien/css/style.css" />
+<link rel="stylesheet" href="ThuVien/css/product.css" />
 </head>
 <body>
 <%@include file="header.jsp"%>
 	<div id="main">
 		<div class="container">
-		<%-- 		<%
-			String username = null;
-				Cookie[] cookies = request.getCookies();
-				if(cookies !=null)
-				{
-				for(Cookie cookie : cookies)
-				{
-				    if(cookie.getName().equals("username")) 
-				    	username = cookie.getValue();
-				}
-				}
-				
-			if (username != null) {
-		%>
-		<div id="head-link">
-			<div id='menungang'>
-				<ul>
-					<li class='last'><a href="index.jsp"><span>Trang
-								chủ</span></a></li>
-					<li class='last'><a href="product.jsp"><span>Sản phẩm</span></a></li>
-					<li class='last'><a href="cart.jsp"><span>Giỏ hàng</span></a></li>
-					<li class='last'><a href="search_page.jsp"><span>Tìm kiếm</span></a></li>
-					<li class='last' style="float: right;"><a href="LogoutServlet"><span>Đăng
-								xuất</span></a></li>
-					<li class='last' style="float: right;"><a href="update_user.jsp?username=<%=username %>"><span><%=username%></span></a></li>
-				</ul>
-			</div>
-		</div>
-		<%
-			} else {
-		%>
-		<div id="head-link">
-			<div id='menungang'>
-				<ul>
-					<li class='last'><a href="index.jsp"><span>Trang
-								chủ</span></a></li>
-					<li class='last'><a href="product.jsp"><span>Sản phẩm</span></a></li>
-					<li class='last'><a href="search_page.jsp"><span>Tìm kiếm</span></a></li>
-					<li class='last' style="float: right;"><a href="register.jsp"><span>Đăng
-								ký</span></a></li>
-					<li class='last' style="float: right;"><a href="login.jsp"><span>Đăng
-								nhập</span></a></li>
-				</ul>
-			</div>
-		</div>
-		<%
-			}
-		%> --%>
+		
 		<div id="content">
 			<div id="left">
 			<%@include file="search_menu.jsp"%>

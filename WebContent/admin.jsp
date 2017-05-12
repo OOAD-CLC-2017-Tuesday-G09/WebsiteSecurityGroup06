@@ -60,7 +60,7 @@ $(document).ready(function()
 							<td><c:out value="${row.customerZip}" /></td>
 						</tr>
 					</c:forEach>
-					
+					</table>
  <div class="login-card">
     <h1 style="color:blue">Đăng Nhập</h1><br>
   <form action="loginAuthenticate.jsp" name ="myform" method="POST" id="signupForm1" class="form-horizontal" onsubmit="return specialcharecter()">

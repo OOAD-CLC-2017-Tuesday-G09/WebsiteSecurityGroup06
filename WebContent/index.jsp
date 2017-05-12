@@ -47,8 +47,8 @@
 							%>
 
 							<li class="preorder"><span class="tagimg "> </span> <a
-								href="detail.jsp?ma_san_pham=<%-- <%=p.getMa_san_pham()%> --%>">
-									<img src="ThuVien/sanpham/<%-- <%=p.getHinh_anh()%> --%>"
+								href="detail.jsp?ma_san_pham=<%=p.getMa_san_pham()%>">
+									<img src="ThuVien/sanpham/<%=p.getHinh_anh()%>"
 									width=" 250px" height="250px" />
 									<h3>
 										<%=p.getTen_san_pham()%>

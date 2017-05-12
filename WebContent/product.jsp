@@ -21,56 +21,7 @@
 	<%@include file="header.jsp"%>
 	<pg:paging pageSize="4">
 		<div id="main">
-			<%-- 
-		<%
-			String username = null;
-				Cookie[] cookies = request.getCookies();
-				if(cookies !=null)
-				{
-				for(Cookie cookie : cookies)
-				{
-				    if(cookie.getName().equals("username")) 
-				    	username = cookie.getValue();
-				}
-				}
-				
-			if (username != null) {
-		%>
-		<div id="head-link">
-			<div id='menungang'>
-				<ul>
-					<li class='last'><a href="index.jsp"><span>Trang
-								chủ</span></a></li>
-					<li class='last'><a href="product.jsp"><span>Sản phẩm</span></a></li>
-					<li class='last'><a href="cart.jsp"><span>Giỏ hàng</span></a></li>
-					<li class='last'><a href="search_page.jsp"><span>Tìm kiếm</span></a></li>
-					<li class='last' style="float: right;"><a href="LogoutServlet"><span>Đăng
-								xuất</span></a></li>
-					<li class='last' style="float: right;"><a href="update_user.jsp?username=<%=username %>"><span><%=username%></span></a></li>
-				</ul>
-			</div>
-		</div>
-		<%
-			} else {
-		%>
-		<div id="head-link">
-			<div id='menungang'>
-				<ul>
-					<li class='last'><a href="index.jsp"><span>Trang
-								chủ</span></a></li>
-					<li class='last'><a href="product.jsp"><span>Sản phẩm</span></a></li>
-					<li class='last'><a href="search_page.jsp"><span>Tìm kiếm</span></a></li>
-					<li class='last' style="float: right;"><a href="register.jsp"><span>Đăng
-								ký</span></a></li>
-					<li class='last' style="float: right;"><a href="login.jsp"><span>Đăng
-								nhập</span></a></li>
-				</ul>
-			</div>
-		</div>
-		<%
-			}
-		%>
-			 --%>
+			
 			<div id="content_center" >
 
 <%
@@ -111,9 +62,6 @@
 				</div>
 
 			<div id="footer" align= "center">
-			<%-- 	<pg:index>
-					<pg:page><%=thisPage%></pg:page>
-				</pg:index> --%>
 			</div>
 		</div>
 	</pg:paging>

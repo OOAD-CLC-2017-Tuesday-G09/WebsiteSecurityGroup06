@@ -86,7 +86,8 @@
 								<li><a href="index.jsp"><span>Trang chủ</span></a></li>
 								<li class='last'><a href="#"><span>Quản Lý User</span></a></li>
 								<li class='last'><a href="#"><span>Quản Lý Đơn Hàng</span></a></li>
-								<li class='last'><a href="#"><span>Quản Lý Sản Phẩm</span></a></li>
+								<li class='last'><a href="QL_product.jsp"><span>Quản Lý Sản Phẩm</span></a></li>
+								<li class='last'><a href="QL_contact.jsp"><span>Quản Lý Tin Nhắn</span></a></li>
 								<li class='last'><a href="update_user.jsp?username=<%=username %>"><span><%=username%></span></a></a></li>
 								<li class='last'><a href="LogoutServlet"><span>Đăng Xuất</span></a></li>
 									</ul>
@@ -134,7 +135,7 @@
 									data-toggle="dropdown" role="button" aria-haspopup="true"
 									aria-expanded="false">More <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Contract</a></li>
+										<li><a href="contact.jsp">Contract</a></li>
 										<li><a href="register.jsp">Register</a></li>
 										<li><a href="login.jsp">Login</a></li>
 										<li><a href="LogoutServlet"><span>Đăng

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+ <link rel="stylesheet" type="text/css" href="ThuVien/css/login.css"/>
+ <head>
+ <!-- 		<script type="text/javascript">
+ 		function specialcharecter()
+ 		{
+ 		    var iChars = "!`@#$%^&*()+=-[]\\\';,./{}|\":<>?~_";   
+ 		    var data = document.getElementById("uname").value;
+ 		    for (var i = 0; i < data.length; i++)
+ 		    {      
+ 		        if (iChars.indexOf(data.charAt(i)) != -1)
+ 		        {    
+ 		            alert ("Your string has special characters. \nThese are not allowed.");
+ 		            document.getElementById("uname").value = "";
+ 		            return false; 
+ 		        } 
+ 		    }
+ 		}
+		</script> -->
+		<script>
+$(document).ready(function()
+{
+
+});
+</script>
+ </head>
+<body>
+	<%@include file="header.jsp"%>
+
+<body>
+	
+ <div class="login-card">
+    <h1 style="color:blue">Đăng Nhập</h1><br>
+  <form action="Data/ilogin.jsp" name ="myform" method="POST" id="signupForm1" class="form-horizontal" onsubmit="return specialcharecter()">
+    <input type="text" name="uname"  id="uname" placeholder="User Name"  required>
+    <input type="password" name="pass" id="pass"  placeholder="PassWord" required>
+      <input type="submit" class="login login-submit" onclick='return submit()' value="login"/>
+  </form>
+     <font color="red" id="msgbox"><c:if test="${not empty param.errMsg}">
+            <c:out value="${param.errMsg}" />
+            </c:if></font>
+  <div class="login-help">
+     <a href="#">Quên mật khẩu</a></br>
+  </div>
+
+</div>   
+	<%@include file="footer.jsp"%>
+</div>
+                   
+
+</div>
+</body>
+</html>
